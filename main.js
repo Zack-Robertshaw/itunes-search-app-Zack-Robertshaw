@@ -1,3 +1,11 @@
+// new search adds songs
+// background image
+// items centered in box
+// do something w/ preview box
+// alert if no results returned from search
+// 
+
+
 console.log("JS hooked up")
 
 
@@ -24,21 +32,15 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
     fetch(url + searchText.value)
         .then((res) => res.json())
         .then((data) => {
-            // console.log(data.results) 
             for (let item of data.results) {
-                // root.appendChild(data.results)
-                console.log(item.artistName)
                 songs.innerHTML +=
                 `<div class="card" >
-                <img src=${item.artworkUrl100}>
-                <li>${item.artistName}</li>
-                <li>${item.trackName}</li>
-                <li>${item.collectionName}</li>
-                <audio controls src=${item.previewUrl}></audio>
+                    <img src=${item.artworkUrl100}>
+                    <div>Name: ${item.artistName}</div>
+                    <div>Song: ${item.trackName}</div>
+                    <div>Album: ${item.collectionName}</div>
+                    <audio controls src=${item.previewUrl}>Preview</audio>
                 </div>
-
-
-
                 `
             }
         })
@@ -47,16 +49,10 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
 
 
 
-listSongs()
+// listSongs()
 
 
 
 
 
 
-// // what goes in the {} on line 45????
-// function renderSongAttributes(li, songObj) {
-//     li.innerHTML = `<span>${results.id.artistName}</span>`
-// }
-
-// 
