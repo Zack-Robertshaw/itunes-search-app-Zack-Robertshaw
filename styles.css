@@ -1,20 +1,33 @@
 * {box-sizing: border-box;
    margin: 0;
 }
+body{
+    background-color:#98DFAF;
+}
 
-
+header{
+    font-family: Impact, fantasy;
+  text-ALIGN: center;
+  font-size: 4vw;
+  margin-top: 0;
+    background-color:#682D63;
+    color: white;
+    border-style: solid; */
+}
  
 #songs-list   {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
+       
+
 
 
 }
 
 .card {
-    
-
+    font font-family: ;
+    justify-content: center;
 }
 
 img {
@@ -26,7 +39,5 @@ img {
 }
 
 audio {
-    display: block;
-    margin: auto;
-    margin-bottom: 5px;
+    color:#5FB49C !important ;
 }

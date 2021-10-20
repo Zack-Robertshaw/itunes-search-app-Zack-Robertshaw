@@ -3,6 +3,8 @@
 // items centered in box
 // do something w/ preview box
 // alert if no results returned from search
+// add css to header
+// center title and form box
 // 
 
 
