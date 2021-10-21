@@ -1,6 +1,9 @@
 * {box-sizing: border-box;
    margin: 0;
 }
+
+ 
+
 body{
     background-color:#98DFAF;
 }
@@ -11,8 +14,8 @@ header{
   font-size: 4vw;
   margin-top: 0;
     background-color:#682D63;
-    color: white;
-    border-style: solid; */
+    color: #DEEFB7;
+    border-style: solid; 
 }
  
 #songs-list   {
@@ -26,8 +29,15 @@ header{
 }
 
 .card {
-    font font-family: ;
+    /* background-color:#682D63 ; */
+    font-family: sans-serif;
+    font weight: 100;
+    height: 275px;
+    width: 275px;
+    padding: 25px;
+    grid-template-columns: 1fr;
     justify-content: center;
+    overflow-wrap: normal;
 }
 
 img {
@@ -39,5 +49,25 @@ img {
 }
 
 audio {
+    width: 200px;
+    height: 25px;
     color:#5FB49C !important ;
+}
+
+#audio {
+    color: #682D63;
+}
+
+input {
+    height: 50px;
+    width: 300px;
+}
+
+#submit-search {
+    background-color: #414288;
+    height: 50px;
+    width: 200px;
+}
+
+#form-field {
 }

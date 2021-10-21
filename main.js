@@ -1,11 +1,9 @@
-// new search adds songs
 // background image
-// items centered in box
-// do something w/ preview box
-// alert if no results returned from search
-// add css to header
+// items centered in card box
+// do something w/ audio preview box color
+// alert if no results returned from search 404 error
 // center title and form box
-// 
+// make card box different color but not padding
 
 
 console.log("JS hooked up")
@@ -19,7 +17,7 @@ const submitButton = document.getElementById('submit-search')
 
 let searchText = document.getElementById('search-text')
 
-const url = 'https://proxy-itunes-api.glitch.me/search?media=music&entity=song&limit=10&term='
+const url = 'https://proxy-itunes-api.glitch.me/search?media=music&entity=song&limit=15&term='
 
 document.getElementById('submit-search').addEventListener('click', (e) => {
     e.preventDefault()
@@ -31,6 +29,7 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
 
 // listSongs function works, will console log data
     function listSongs() {
+    document.getElementById('songs-list').innerHTML = ''
     fetch(url + searchText.value)
         .then((res) => res.json())
         .then((data) => {
@@ -41,13 +40,16 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
                     <div>Name: ${item.artistName}</div>
                     <div>Song: ${item.trackName}</div>
                     <div>Album: ${item.collectionName}</div>
-                    <audio controls src=${item.previewUrl}>Preview</audio>
+                    <audio id="audio" controls src=${item.previewUrl}>Preview</audio>
                 </div>
                 `
             }
         })
     }
 
+    // catch (error) {
+    //     alert("No Results!")
+    // }
 
 
 
