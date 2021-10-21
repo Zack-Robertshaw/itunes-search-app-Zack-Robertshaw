@@ -19,9 +19,11 @@ header{
 }
  
 #songs-list   {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin: 15px;
+        margin-bottom: 50px;
+  
        
 
 
@@ -29,7 +31,14 @@ header{
 }
 
 .card {
-    /* background-color:#682D63 ; */
+    margin: 25px;
+    background-color: aquamarine;
+    max-width: 350px;
+    text-align: center;
+    align-content: center;
+    border-radius: 15px;
+
+    /* background-color:#682D63 ;
     font-family: sans-serif;
     font weight: 100;
     height: 275px;
@@ -37,7 +46,7 @@ header{
     padding: 25px;
     grid-template-columns: 1fr;
     justify-content: center;
-    overflow-wrap: normal;
+    overflow-wrap: normal; */
 }
 
 img {
@@ -51,12 +60,10 @@ img {
 audio {
     width: 200px;
     height: 25px;
-    color:#5FB49C !important ;
+    color:#5FB49C !important;
+    margin-bottom: 1px;
 }
 
-#audio {
-    color: #682D63;
-}
 
 input {
     height: 50px;

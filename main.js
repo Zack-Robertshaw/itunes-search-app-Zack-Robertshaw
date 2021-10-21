@@ -1,9 +1,7 @@
 // background image
-// items centered in card box
 // do something w/ audio preview box color
 // alert if no results returned from search 404 error
 // center title and form box
-// make card box different color but not padding
 
 
 console.log("JS hooked up")
@@ -27,7 +25,6 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
 })
 
 
-// listSongs function works, will console log data
     function listSongs() {
     document.getElementById('songs-list').innerHTML = ''
     fetch(url + searchText.value)
@@ -37,23 +34,16 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
                 songs.innerHTML +=
                 `<div class="card" >
                     <img src=${item.artworkUrl100}>
-                    <div>Name: ${item.artistName}</div>
+                    <h3>${item.artistName}</h3>
                     <div>Song: ${item.trackName}</div>
                     <div>Album: ${item.collectionName}</div>
-                    <audio id="audio" controls src=${item.previewUrl}>Preview</audio>
+                    <audio controls src=${item.previewUrl}>Preview</audio>
                 </div>
                 `
             }
         })
     }
 
-    // catch (error) {
-    //     alert("No Results!")
-    // }
-
-
-
-// listSongs()
 
 
 
