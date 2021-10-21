@@ -1,10 +1,9 @@
 // background image
 // do something w/ audio preview box color
-// alert if no results returned from search 404 error
 // center title and form box
 
 
-console.log("JS hooked up")
+console.log("Hello World!")
 
 
 const songs = document.getElementById("songs-list")
@@ -25,12 +24,15 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
 })
 
 
-    function listSongs() {
+function listSongs() {
     document.getElementById('songs-list').innerHTML = ''
     fetch(url + searchText.value)
         .then((res) => res.json())
         .then((data) => {
-            for (let item of data.results) {
+            if (data.results <= 0) {
+                alert('Search Returned Zero Results')
+            } else {
+                for (let item of data.results) {
                 songs.innerHTML +=
                 `<div class="card" >
                     <img src=${item.artworkUrl100}>
@@ -40,13 +42,8 @@ document.getElementById('submit-search').addEventListener('click', (e) => {
                     <audio controls src=${item.previewUrl}>Preview</audio>
                 </div>
                 `
+                }
             }
-        })
-    }
-
-
-
-
-
-
+        })    
+}
 
