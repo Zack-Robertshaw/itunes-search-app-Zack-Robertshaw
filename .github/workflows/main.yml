@@ -1,19 +1,26 @@
-name: Install Dependencies
-  run: npm install
+name: itunes_search_app
+on:
+  push:
+    branches: [main]
 
-- name: Build
-  run: npm run build 
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-- name: Test
-  run: npm test
+    env:
+      NODE_VERSION: '14.x'
 
-- name: Package
-  run: zip -r app.zip .
-  if: success()
-  env:
-    ARTIFACT_NAME: app.zip
-
-- name: Upload artifact
-  uses: actions/upload-artifact@v3
-  with:
-    name: ${{ env.ARTIFACT_NAME }}
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+          
+        - name: Install Node.js 
+          uses: actions/setup-node@v2
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+            
+        - name: Install dependencies
+          run: npm install
+          
+        - name: Run tests 
+          run: npm test
