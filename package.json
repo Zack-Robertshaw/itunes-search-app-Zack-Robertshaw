@@ -1,9 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "start": "live-server"
+    "start": "live-server",
+    "build": "build"
   },
   "devDependencies": {
     "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "build": "^0.1.4"
   }
 }
